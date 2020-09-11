@@ -1,6 +1,6 @@
 # flutter_demo
 
-A new Flutter project.
+Flutter学习Demo
 
 ## Getting Started
 
