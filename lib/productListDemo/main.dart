@@ -49,16 +49,16 @@ class HomeContent extends StatelessWidget {
 }
 
 class ProductItem extends StatelessWidget {
-  final String title;
-  final String desc;
-  final String imageURL;
-
   ProductItem({
     Key key,
     @required this.title,
     @required this.desc,
     @required this.imageURL,
   }) : super(key: key);
+
+  final String title;
+  final String desc;
+  final String imageURL;
 
   @override
   Widget build(BuildContext context) {
