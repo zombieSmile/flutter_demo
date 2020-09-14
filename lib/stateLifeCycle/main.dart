@@ -14,8 +14,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('State LifeCycle Demo'),
         ),
-        // body: StateLifeCycleWidget(),
-        body: Text('测试'),
+        body: StateLifeCycleWidget(),
+        // body: Text('测试'),
       ),
     );
   }
