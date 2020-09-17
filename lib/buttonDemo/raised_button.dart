@@ -109,11 +109,7 @@ class RaisedButtonIcon extends StatelessWidget {
     return RaisedButton.icon(
       color: Colors.yellow,
       onPressed: () {},
-      icon: Icon(
-        icon,
-        size: 25.0,
-        color: Colors.red,
-      ),
+      icon: Icon(icon, size: 25.0, color: Colors.red),
       label: Text('图片文字按钮'),
     );
   }

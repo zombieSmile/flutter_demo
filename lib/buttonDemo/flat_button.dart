@@ -27,7 +27,7 @@ class FlatButtonDemo extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          FlatButtonDefault(isDisabled: true),
+          FlatButtonDefault(isDisabled: false),
           SizedBox(height: 30),
           FlatButtonIcon(),
           SizedBox(height: 30),
