@@ -26,7 +26,6 @@ class HomeBody extends StatefulWidget {
 }
 
 class _HomeBodyState extends State<HomeBody> {
-
   bool flag = true;
 
   @override
@@ -43,10 +42,7 @@ class _HomeBodyState extends State<HomeBody> {
               });
             },
           ),
-          Text(
-            '同意协议',
-            style: TextStyle(fontSize: 20),
-          )
+          Text('同意协议', style: TextStyle(fontSize: 20)),
         ],
       ),
     );
