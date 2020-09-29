@@ -86,7 +86,52 @@ class _TextFieldDemoState extends State<TextFieldDemo> {
             print('onChange: $v');
           },
         ),
+        SizedBox(height: 30),
+        CustomTextFieldDemo(),
       ],
+    );
+  }
+}
+
+class CustomTextFieldDemo extends StatefulWidget {
+  @override
+  _CustomTextFieldDemoState createState() => _CustomTextFieldDemoState();
+}
+
+class _CustomTextFieldDemoState extends State<CustomTextFieldDemo> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        children: <Widget>[
+          Container(
+            width: 300,
+            height: 41,
+            child: TextField(
+              decoration: InputDecoration(
+                contentPadding: EdgeInsets.fromLTRB(15, 13, 20, 0),
+                fillColor: Colors.white,
+                filled: true,
+                hintText: '请输入手机号',
+                hintStyle: TextStyle(
+                    color: Color.fromRGBO(153, 153, 153, 1.0), fontSize: 14),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Color.fromRGBO(197, 197, 197, 1.0), width: 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(40)),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Color.fromRGBO(197, 197, 197, 1.0), width: 1.0),
+                  borderRadius: BorderRadius.all(Radius.circular(40)),
+                ),
+              ),
+              keyboardType: TextInputType.number,
+              style: TextStyle(fontSize: 14),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
