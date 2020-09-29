@@ -128,6 +128,7 @@ class _CustomTextFieldDemoState extends State<CustomTextFieldDemo> {
               ),
               keyboardType: TextInputType.number,
               style: TextStyle(fontSize: 14),
+              textAlign: TextAlign.left,
             ),
           ),
         ],
