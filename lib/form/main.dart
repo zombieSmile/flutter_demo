@@ -78,7 +78,7 @@ class _FormDemoState extends State<FormDemo> {
                         // 通过_formKey.currentState 获取FormState后
                         // 调用validate()方法校验用户名密码是否合法，校验
                         // 通过后再提交数据。
-                        if((_formKey.currentState as FormState).validate()) {
+                        if ((_formKey.currentState as FormState).validate()) {
                           // 验证通过提交数据
                           print('验证通过');
                         }
