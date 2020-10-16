@@ -74,7 +74,7 @@ class ClipRRectImage extends StatelessWidget {
     return ClipRRect(
       borderRadius: BorderRadius.circular(20),
       child: Image.network(
-        'https://tva1.sinaimg.cn/large/006y8mN6gy1g7aa03bmfpj3069069mx8.jpg',
+        'https://tva1.sinaimg.cn/large/ .jpg',
         width: 100,
         height: 100,
       ),
