@@ -24,8 +24,8 @@ class WrapDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
-      spacing: 8.0,
-      runSpacing: 4.0,
+      spacing: 8.0, // 主轴(水平)方向间距
+      runSpacing: 4.0, // 纵轴（垂直）方向间距
       alignment: WrapAlignment.spaceBetween,
       children: <Widget>[
         Chip(
