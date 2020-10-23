@@ -7,6 +7,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Container Demo',
+      theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
