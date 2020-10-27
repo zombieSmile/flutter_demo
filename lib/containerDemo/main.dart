@@ -34,16 +34,16 @@ class ContainerDemo extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-              color: Colors.black54,
-              offset: Offset(2.0, 2.0),
-              blurRadius: 4.0),
+            color: Colors.black54,
+            offset: Offset(2.0, 2.0),
+            blurRadius: 4.0,
+          ),
         ],
       ),
       transform: Matrix4.rotationZ(.2),
       alignment: Alignment.center,
-      //容器内补白,
-      child: Text('10.10',
-          style: TextStyle(color: Colors.white, fontSize: 40.0)),
+      child:
+          Text('10.10', style: TextStyle(color: Colors.white, fontSize: 40.0)),
     );
   }
 }

@@ -51,26 +51,35 @@ class StackDemo extends StatelessWidget {
 class PositionedDemo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ConstrainedBox(
-      constraints: BoxConstraints.expand(),
-      child: Stack(
-        alignment: Alignment.center, // 指定未定位或部分定位widget的对齐方式
-        // fit: StackFit.expand,     //未定位widget占满Stack整个空间
-        children: <Widget>[
-          Container(
-            child: Text('Hello Flutter', style: TextStyle(color: Colors.pink)),
-            color: Colors.blue,
+    return Stack(
+      children: [
+        Image.asset('assets/images/juren.jpeg'),
+        Positioned(
+          left: 0,
+          right: 0,
+          bottom: 0,
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            color: Color.fromRGBO(0, 0, 0, .5),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  '进击的巨人',
+                  style: TextStyle(fontSize: 20, color: Colors.white),
+                ),
+                IconButton(
+                  icon: Icon(
+                    Icons.favorite,
+                    color: Colors.white,
+                  ),
+                  onPressed: () => print('点击'),
+                )
+              ],
+            ),
           ),
-          Positioned(
-            left: 18.0,
-            child: Text('I am wang'),
-          ),
-          Positioned(
-            top: 18.0,
-            child: Text("Your friend"),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
