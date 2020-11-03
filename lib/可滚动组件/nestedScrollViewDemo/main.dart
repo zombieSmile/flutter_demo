@@ -72,16 +72,28 @@ class _NestedScrollViewDemoState extends State<NestedScrollViewDemo>
         ];
       },
       body: TabBarView(
-        children: tabs.map((e) {
-          return Container(
-            alignment: Alignment.center,
-            child: Text(e, textScaleFactor: 5),
-          );
-        }).toList(),
+        children: [TestList(), TestList(), TestList()],
         controller: _tabController,
       ),
     );
   }
+}
+
+Widget TestList() {
+  return ListView.builder(
+    itemCount: 50,
+    itemExtent: 70.0, // 强制高度为70.0
+    itemBuilder: (BuildContext context, int index) {
+      return ListTile(
+        title: Text('title $index'),
+        leading: Icon(Icons.keyboard),
+        subtitle: Text('subtitle $index'),
+        trailing: Icon(Icons.keyboard_arrow_right),
+        // item内容边距
+        contentPadding: EdgeInsets.all(10.0),
+      );
+    },
+  );
 }
 
 class StickTabBarDelegate extends SliverPersistentHeaderDelegate {
@@ -93,7 +105,7 @@ class StickTabBarDelegate extends SliverPersistentHeaderDelegate {
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
     return Container(
-      color: Colors.transparent,
+      color: Colors.white,
       child: this.child,
     );
   }
