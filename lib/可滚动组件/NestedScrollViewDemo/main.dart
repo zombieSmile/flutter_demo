@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -50,10 +49,14 @@ class _NestedScrollViewDemoState extends State<NestedScrollViewDemo>
       headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
         return [
           SliverAppBar(
-            expandedHeight: 200.0,
+            toolbarHeight: 0.0,
+            expandedHeight: 300.0,
+            backgroundColor: Colors.transparent,
             pinned: false,
             flexibleSpace: FlexibleSpaceBar(
-              background: Image.asset('assets/images/juren.jpeg', fit: BoxFit.fill),
+              collapseMode: CollapseMode.pin,
+              background:
+                  Image.asset('assets/images/juren.jpeg', fit: BoxFit.fill),
             ),
           ),
           SliverPersistentHeader(
