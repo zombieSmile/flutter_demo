@@ -126,7 +126,7 @@ class ListViewBuilderDemo extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 50,
-      itemExtent: 70.0, // 强制高度为50.0
+      itemExtent: 70.0, // 强制高度为70.0
       itemBuilder: (BuildContext context, int index) {
         return ListTile(
           title: Text('title $index'),
