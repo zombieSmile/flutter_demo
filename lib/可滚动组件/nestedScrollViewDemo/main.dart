@@ -72,14 +72,14 @@ class _NestedScrollViewDemoState extends State<NestedScrollViewDemo>
         ];
       },
       body: TabBarView(
-        children: [TestList(), TestList(), TestList()],
+        children: [getTestList(), getTestList(), getTestList()],
         controller: _tabController,
       ),
     );
   }
 }
 
-Widget TestList() {
+Widget getTestList() {
   return ListView.builder(
     itemCount: 50,
     itemExtent: 70.0, // 强制高度为70.0
