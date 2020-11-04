@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/http/http_error.dart';
-import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/http/response_model.dart';
+import 'http_error.dart';
+import 'response_model.dart';
 import 'api.dart';
 
 const int _connectTimeout = 15000; // 15秒

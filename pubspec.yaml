@@ -48,6 +48,8 @@ flutter:
     - assets/images/teacherDefault.png
     - assets/images/telephone.png
     - assets/images/password.png
+    - assets/images/tabbar/
+    - assets/images/home/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
