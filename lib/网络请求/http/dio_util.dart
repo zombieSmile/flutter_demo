@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'log_util.dart';
 import 'http_error.dart';
 import 'response_model.dart';
 import 'api.dart';
@@ -81,15 +82,13 @@ class OnRequestInterceptors extends InterceptorsWrapper {
   // 请求拦截
   @override
   Future onRequest(RequestOptions options) {
-    if (Api.inProduction == false) {
-      print("请求baseUrl：${options.baseUrl}");
-      print("请求url：${options.path}");
-      print('请求头: ${options.headers.toString()}');
-      if (options.data != null) {
-        print('请求参数: ${options.data.toString()}');
-      }
-      return super.onRequest(options);
+    LogUtil.v('请求baseUrl：${options.baseUrl}');
+    LogUtil.v('请求url：${options.path}');
+    if(options.data != null) {
+      LogUtil.v('请求头: ${options.headers.toString()}');
     }
+    LogUtil.v('请求参数: ${options.data.toString()}');
+    return super.onRequest(options);
   }
 
   // 响应拦截
@@ -97,9 +96,7 @@ class OnRequestInterceptors extends InterceptorsWrapper {
   Future onResponse(Response response) {
     Response res = response;
     if (response != null) {
-      if (Api.inProduction == false) {
-        print('响应: ${response.toString()}');
-      }
+      LogUtil.v('响应: ${response.toString()}');
     }
 
     if (response.statusCode == 200) {
@@ -117,10 +114,8 @@ class OnRequestInterceptors extends InterceptorsWrapper {
 class OnErrorInterceptors extends InterceptorsWrapper {
   @override
   Future onError(DioError err) {
-    if (Api.inProduction == false) {
-      print('请求异常: ${err.toString()}');
-      print('请求异常信息: ${err.response?.toString() ?? ""}');
-    }
+    LogUtil.v('请求异常: ${err.toString()}');
+    LogUtil.v('请求异常信息: ${err.response?.toString() ?? ""}');
     HttpError.dioError(err);
     return super.onError(err);
   }

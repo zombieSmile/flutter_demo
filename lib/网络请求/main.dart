@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/city_model.dart';
+import 'city_model.dart';
 import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/http/api.dart';
-import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/http/dio_utils.dart';
+import 'package:flutter_demo/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/http/dio_util.dart';
 
 void main() => runApp(MyApp());
 
