@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:crypto/crypto.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'log_util.dart';
@@ -40,6 +41,11 @@ class DioManager {
 
   // get请求
   Future get({@required String url, Map params}) async {
+    if (params == null) {
+      params = Map();
+    }
+    params['Edition'] = '1.0.0';
+    params['appId'] = 24;
     return await request(url, method: DioMethod.get, params: params);
   }
 
@@ -84,11 +90,38 @@ class OnRequestInterceptors extends InterceptorsWrapper {
   Future onRequest(RequestOptions options) {
     LogUtil.v('请求baseUrl：${options.baseUrl}');
     LogUtil.v('请求url：${options.path}');
-    if(options.data != null) {
+    if (options.data != null) {
+      Map data = options.data;
+      List keysList = data.keys.toList();
+      // 参数全部小写
+      List lowCaseList = keysList
+          .expand((element) => [element.toString().toLowerCase()])
+          .toList();
+      // 参数按照首字母排序
+      lowCaseList.sort();
+      String keysStr = lowCaseList.join('');
+      print('===========' + keysStr);
+      // 和后台约定的key值
+      String key = 'tianguieduapi';
+
+      // 时间戳
+      String time = DateTime.now().millisecondsSinceEpoch.toString();
+
+      String md5Str = generateMd5(time + key + keysStr).toUpperCase();
+      options.headers['timestamp'] = time;
+      options.headers['signature'] = md5Str;
       LogUtil.v('请求头: ${options.headers.toString()}');
     }
+    LogUtil.v('请求参数====: ${options.data}');
     LogUtil.v('请求参数: ${options.data.toString()}');
     return super.onRequest(options);
+  }
+
+  // md5加密
+  String generateMd5(String data) {
+    var content = new Utf8Encoder().convert(data);
+    var digest = md5.convert(content);
+    return digest.toString();
   }
 
   // 响应拦截
