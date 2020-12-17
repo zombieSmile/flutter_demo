@@ -44,11 +44,6 @@ class _AnimationDemoState extends State<AnimationDemo>
     // Tween
     _sizeAnimation = Tween(begin: 50.0, end: 150.0).animate(_curvedAnimation);
 
-    // 监听动画值改变
-    _controller.addListener(() {
-      setState(() {});
-    });
-
     // 监听动画状态改变
     _controller.addStatusListener((status) {
       if (status == AnimationStatus.completed) {
