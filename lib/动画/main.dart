@@ -31,7 +31,6 @@ class _AnimatedDemoState extends State<AnimatedDemo> {
   double _left = 0;
   Color _color = Colors.red;
   TextStyle _style = TextStyle(color: Colors.black);
-  Color _decorationColor = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
