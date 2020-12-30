@@ -96,12 +96,14 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               '$_counter',
+              key: ValueKey("textKey"),
               style: Theme.of(context).textTheme.display1,
             ),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        key: ValueKey("buttonKey"),
         onPressed: _incrementCounter,
         tooltip: 'Increment',
         child: Icon(Icons.add),
